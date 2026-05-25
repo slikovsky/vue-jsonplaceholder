@@ -16,9 +16,7 @@ const model = defineModel<Comment | null>()
 const comments = ref<Comment[]>([])
 
 async function fetchComments(postId: number) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
-  )
+  const res = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
   comments.value = await res.json()
 }
 
@@ -30,7 +28,7 @@ watch(
       model.value = null // сброс
     }
   },
-  { immediate: true }
+  { immediate: true },
 )
 </script>
 

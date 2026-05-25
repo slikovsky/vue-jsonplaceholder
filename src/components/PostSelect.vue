@@ -15,9 +15,7 @@ const model = defineModel<Post | null>()
 const posts = ref<Post[]>([])
 
 async function fetchPosts(userId: number) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
-  )
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
   posts.value = await res.json()
 }
 
@@ -29,7 +27,7 @@ watch(
       model.value = null // сброс выбора
     }
   },
-  { immediate: true }
+  { immediate: true },
 )
 </script>
 

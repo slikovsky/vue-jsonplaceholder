@@ -9,9 +9,7 @@ const emit = defineEmits<{
 
 function onChange(event: Event) {
   const target = event.target as HTMLSelectElement
-  const value = props.options.find(
-    o => o.id === Number(target.value)
-  ) || null
+  const value = props.options.find((o) => o.id === Number(target.value)) || null
 
   emit('update:modelValue', value)
 }

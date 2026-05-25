@@ -17,7 +17,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <BaseSelect v-model="model" :options="users" label="Пользователи" >
+  <BaseSelect v-model="model" :options="users" label="Пользователи">
     <template #default="{ option }">
       {{ option.name }}
     </template>
